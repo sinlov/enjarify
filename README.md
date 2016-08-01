@@ -20,14 +20,13 @@ cd ~/opt
 git clone git@github.com:sinlov/enjarify.git
 ```
 
-my verison
 
--python3 3.5.2
--pypy3 2.4.0
+- python3 3.5.2
+- pypy3 2.4.0
 
 you can change to other path
 
-change `enjarify.sh`
+- change `enjarify.sh`
 
 ```sh
 # change enjarify_install_path to your install enjarify path
@@ -36,7 +35,9 @@ enjarify_install_path=/Users/sinlov/opt/enjarify
 
 > because pypy3 2.4 must use -f for mulit-write file, you must use params `-f` at pypy
 
-after below install you can add path at `.bash_profile` for use enjarify.sh anywhere
+- after below install
+
+you can add path at `.bash_profile` for use enjarify.sh anywhere
 
 ```sh
 # enjarify path
@@ -55,7 +56,7 @@ For convenience, a wrapper shell script is provided, enjarify.sh. This will try 
 
 #### Windows
 
-`You must install [pypy3](http://pypy.org/)`
+`You must install ` [pypy3](http://pypy.org/)
 
 must use for python3, such as
 
