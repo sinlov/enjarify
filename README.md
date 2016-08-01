@@ -11,7 +11,7 @@ Enjarify is a pure python 3 application, so you can just git clone and run it. T
 
 For normal use, you'll probably want to use the wrapper scripts and set it up on your path.
 
-### MAC
+### Using in OSX
 
 ```sh
 brew install python3
@@ -19,6 +19,11 @@ brew install pypy3
 cd ~/opt
 git clone git@github.com:sinlov/enjarify.git
 ```
+
+my verison
+
+-python3 3.5.2
+-pypy3 2.4.0
 
 you can change to other path
 
@@ -39,6 +44,9 @@ ENJARIFY_PATH=/Users/youUserName/opt/enjarify
 export PATH=$ENJARIFY_PATH:$PATH
 ```
 
+
+> beacuse OSX `readlink` is different at Linux, you can change script to support Linux
+
 #### Linux
 
 For convenience, a wrapper shell script is provided, enjarify.sh. This will try to use Pypy if available, since it is faster than CPython. If you want to be able to call Enjarify from anywhere, you can create a symlink from somewhere on your PATH, such as ~/bin. To do this, assuming you are inside the top level of the repository,
@@ -46,6 +54,14 @@ For convenience, a wrapper shell script is provided, enjarify.sh. This will try 
     ln -s "$PWD/enjarify.sh" ~/bin/enjarify
 
 #### Windows
+
+`You must install [pypy3](http://pypy.org/)`
+
+must use for python3, such as
+
+[pypy3-2.4](https://bitbucket.org/pypy/pypy/downloads/pypy3-2.4.0-win32.zip)
+
+add pypy to Path for use commond `pypy`, check path commond is `pypy --version`
 
 A wrapper batch script, enjarify.bat, is provided. To be able to call it from anywhere, just add the root directory of the repository to your PATH. The batch script will always invoke python3 as interpreter. If you want to use pypy, just edit the script.
 
