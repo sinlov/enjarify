@@ -30,14 +30,17 @@ guess "python3"
 guess "pypy"
 guess "python"
 
+
+enjarify_install_path=/Users/sinlov/opt/enjarify
+
 if [ -z "$PYTHON" ]; then
 	echo "Unable to find python3 on path"
 else
 	echo "Using $PYTHON as Python interpreter"
 
 	# Find location of this bash script, and set its directory as the PYTHONPATH
-	export PYTHONPATH=$(dirname "$(readlink "${BASH_SOURCE[0]}")")
+	export PYTHONPATH=$(dirname "$(readlink "${BASH_SOURCE[0]}")"):${enjarify_install_path}
 
-	# Now execute the actual program
-	exec $PYTHON -O -m enjarify.main "$@"
+	# Now execute the actual program if you use pypy3 must add -f, if not remove it
+	exec $PYTHON -O -m enjarify.main -f "$@"
 fi

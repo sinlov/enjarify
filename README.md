@@ -11,6 +11,34 @@ Enjarify is a pure python 3 application, so you can just git clone and run it. T
 
 For normal use, you'll probably want to use the wrapper scripts and set it up on your path.
 
+### MAC
+
+```sh
+brew install python3
+brew install pypy3
+cd ~/opt
+git clone git@github.com:sinlov/enjarify.git
+```
+
+you can change to other path
+
+change `enjarify.sh`
+
+```sh
+# change enjarify_install_path to your install enjarify path
+enjarify_install_path=/Users/sinlov/opt/enjarify
+```
+
+> because pypy3 2.4 must use -f for mulit-write file, you must use params `-f` at pypy
+
+after below install you can add path at `.bash_profile` for use enjarify.sh anywhere
+
+```sh
+# enjarify path
+ENJARIFY_PATH=/Users/youUserName/opt/enjarify
+export PATH=$ENJARIFY_PATH:$PATH
+```
+
 #### Linux
 
 For convenience, a wrapper shell script is provided, enjarify.sh. This will try to use Pypy if available, since it is faster than CPython. If you want to be able to call Enjarify from anywhere, you can create a symlink from somewhere on your PATH, such as ~/bin. To do this, assuming you are inside the top level of the repository,
