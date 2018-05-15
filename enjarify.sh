@@ -30,8 +30,9 @@ guess "python3"
 guess "pypy"
 guess "python"
 
-
-enjarify_install_path=/Users/sinlov/opt/enjarify
+shell_run_path=$(cd `dirname $0`; pwd)
+#echo -e "shell_now_path => ${shell_run_path}"
+enjarify_install_path=${shell_run_path}
 
 if [ -z "$PYTHON" ]; then
 	echo "Unable to find python3 on path"
